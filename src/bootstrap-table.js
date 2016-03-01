@@ -1,6 +1,6 @@
 /**
  * @author zhixin wen <wenzhixin2010@gmail.com>
- * version: 1.10.1
+ * version: 1.10.2
  * https://github.com/wenzhixin/bootstrap-table/
  */
 
@@ -2251,7 +2251,7 @@
 
         // #431: support pagination
         if (this.options.sidePagination === 'server') {
-            this.options.totalRows = data.total;
+            this.options.totalRows = data.total > -1 ? data.total : this.options.totalRows;
             fixedScroll = data.fixedScroll;
             data = data[this.options.dataField];
         } else if (!$.isArray(data)) { // support fixedScroll
